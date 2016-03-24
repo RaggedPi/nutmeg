@@ -1,11 +1,14 @@
-// RaggedPi Project
-// Arduino 3 "Nutmeg"
-// Written by david durost <david.durost@gmail.com>
+/*
+  RaggedPi Project
+  Arduino 3 "Nutmeg"
+  Written by david durost <david.durost@gmail.com>
+*/
 
-// Includes
+/* Includes */
 #include <DHT.h>
 
 // Defines
+// DHT
 #define DHTPIN 4 // arduino digital pin
 #define DHTTYPE DHT11
 #define DHTTIME 2000 // wait 2 sec between measurements
