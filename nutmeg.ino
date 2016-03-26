@@ -13,10 +13,18 @@
 #define DHTTYPE DHT11
 #define DHTTIME 2000 // wait 2 sec between measurements
 #define DHTFAHRENHEIT true // fahrenheit (true) or celsius (false)
+// MQ2
+#define MQ2PIN A0 // arduino analog pin
 
-// Initializations
+/* Variables */
+int ledState = LOW; // LED state
+
+/* Initializations */
 DHT dht(DHTPIN, DHTTYPE);
 
+/**
+ * Setup
+ */
 void setup() {
   Serial.begin(9600);
   Serial.println("RaggedPi Project Codename Nutmeg Initialized.");
@@ -24,11 +32,17 @@ void setup() {
   dht.begin();
 }
 
+/**
+ * Loop
+ */
 void loop() {
   readDHT();
+  readMq2();
 }
 
-// Read DHT sensor
+/**
+ * Read DHT sensor
+ */
 void readDHT() {
   delay(DHTTIME);
   
